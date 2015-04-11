@@ -1,0 +1,40 @@
+{
+  "name": "crashndash-server",
+  "version": "1.6.0",
+  "description": "Multiplayer server for Crash n Dash",
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "^1.11.0",
+    "bunyan": "^1.3.3",
+    "express": "^4.11.2",
+    "hiredis": "^0.2.0",
+    "redis": "^0.12.1",
+    "seed-random": "^2.2.0",
+    "toobusy-js": "^0.3.1",
+    "underscore": "^1.7.0"
+  },
+  "devDependencies": {
+    "eslint": "^0.14.1",
+    "istanbul": "^0.3.5",
+    "mocha": "^2.1.0",
+    "should": "^4.6.5",
+    "supertest": "^0.15.0"
+  },
+  "scripts": {
+    "test": "eslint . && mocha",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/crashndash/server.git"
+  },
+  "author": "Eirik S. Morland <eirik@morland.no>",
+  "license": "MIT",
+  "directories": {
+    "test": "test"
+  },
+  "bugs": {
+    "url": "https://github.com/crashndash/server/issues"
+  },
+  "homepage": "https://github.com/crashndash/server"
+}

@@ -1,0 +1,12 @@
+{
+  "port": 3333,
+  "namespace": "mynamespace",
+  "secret": "secret",
+  "masterhostname": "hostname.com"
+  "masterscheme": "http",
+  "masterport": 2222,
+  "numsegments": 107,
+  "headerControlNumber": "X-Number",
+  "headerHash": "X-Thisisthehash",
+  "customHash": ""
+}
