@@ -4,3 +4,5 @@ node_js:
   - "0.10"
   - "io.js"
 sudo: false
+after_succes:
+  - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
