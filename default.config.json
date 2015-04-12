@@ -2,7 +2,7 @@
   "port": 3333,
   "namespace": "mynamespace",
   "secret": "secret",
-  "masterhostname": "hostname.com"
+  "masterhostname": "hostname.com",
   "masterscheme": "http",
   "masterport": 2222,
   "numsegments": 107,
