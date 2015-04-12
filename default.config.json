@@ -8,5 +8,5 @@
   "numsegments": 107,
   "headerControlNumber": "X-Number",
   "headerHash": "X-Thisisthehash",
-  "customHash": ""
+  "customHash": false 
 }
