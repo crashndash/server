@@ -7,5 +7,5 @@
   "masterport": 2222,
   "numsegments": 107,
   "headerControlNumber": "X-Number",
-  "headerHash": "X-Thisisthehash",
+  "headerHash": "X-Thisisthehash"
 }
