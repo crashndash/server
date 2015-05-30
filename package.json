@@ -19,7 +19,7 @@
     "istanbul": "^0.3.14",
     "mocha": "^2.2.5",
     "should": "^6.0.3",
-    "supertest": "^0.15.0"
+    "supertest": "^1.0.1"
   },
   "scripts": {
     "test": "eslint . && mocha",
