@@ -46,8 +46,8 @@ describe('Connect', function() {
   it('GET /connect should return 418 without user headers', function(done) {
     request(app)
       .get('/connect')
-      .end(function(err, res) {
-        res.status.should.equal(418);
+      .expect(418)
+      .end(function(err) {
         done(err);
       });
   });
@@ -61,8 +61,8 @@ describe('Connect', function() {
       .set('X-User', user.j())
       .set(config.headerHash, hash.h())
       .set(config.headerControlNumber, hash.number)
-      .end(function(err, res) {
-        res.status.should.equal(418);
+      .expect(418)
+      .end(function(err) {
         done(err);
       });
   });
@@ -335,21 +335,20 @@ describe('Game', function() {
   it('POST /game should return 418 with old params', function(done) {
     request(app)
       .post('/game?user=eirik&game=' + testgame)
-      .end(function(err, res) {
-        res.status.should.equal(418);
+      .expect(418)
+      .end(function(err) {
         done(err);
       });
   });
 
-  it('POST /game should return 200 without game and user', function(done) {
+  it('POST /game should return 400 without game and user', function(done) {
     request(app)
     .post('/game')
     .set('X-User', user.j())
     .set(config.headerHash, hash.h())
     .set(config.headerControlNumber, hash.number)
-    .end(function(err, res) {
-      res.status.should.equal(400);
-      // The response should contain number of opponents.
+    .expect(400)
+    .end(function(err) {
       done(err);
     });
   });
@@ -416,8 +415,8 @@ describe('Game', function() {
       .set('X-User', user.j())
       .set(config.headerHash, hash.h())
       .set(config.headerControlNumber, hash.number)
-      .end(function(err, res) {
-        res.status.should.equal(403);
+      .expect(403)
+      .end(function(err) {
         done(err);
       });
   });
@@ -437,9 +436,9 @@ describe('Game', function() {
     .set('X-User', user2.j())
     .set(config.headerHash, hash2.h())
     .set(config.headerControlNumber, hash2.number)
-    .end(function(err, res) {
+    .expect(403)
+    .end(function(err) {
       should(err).equal(null);
-      res.status.should.equal(403);
       request(app)
       .post('/game?game=' + testgame)
       .set('X-User', user.j())
@@ -461,8 +460,8 @@ describe('Event', function() {
   it('Should return 418 without user header on POST event to /', function(done) {
     request(app)
     .post('/?room=eirik&message=&type=death')
-    .end(function(err, res) {
-      res.status.should.equal(418);
+    .expect(418)
+    .end(function(err) {
       done(err);
     });
   });
@@ -476,8 +475,8 @@ describe('Event', function() {
     .set('X-User', user2.j())
     .set(config.headerHash, hash2.h())
     .set(config.headerControlNumber, hash2.number)
-    .end(function(err, res) {
-      res.status.should.equal(400);
+    .expect(400)
+    .end(function(err) {
       done(err);
     });
   });
@@ -490,8 +489,8 @@ describe('Event', function() {
     .set('X-User', user2.j())
     .set(config.headerHash, hash2.h())
     .set(config.headerControlNumber, (hash2.number - 1))
-    .end(function(err, res) {
-      res.status.should.equal(400);
+    .expect(400)
+    .end(function(err) {
       done(err);
     });
   });
@@ -513,8 +512,8 @@ describe('Event', function() {
       .set('X-User', user2.j())
       .set(config.headerHash, hash2.hash)
       .set(config.headerControlNumber, hash2.number)
-      .end(function(err2, res2) {
-        res2.status.should.equal(400);
+      .expect(400)
+      .end(function(err2) {
         done(err2);
       });
     });
@@ -526,8 +525,8 @@ describe('Event', function() {
     .set('X-User', user.j())
     .set(config.headerHash, hash.h())
     .set(config.headerControlNumber, hash.number)
-    .end(function(err, res) {
-      res.status.should.equal(400);
+    .expect(400)
+    .end(function(err) {
       done(err);
     });
   });
@@ -538,8 +537,8 @@ describe('Event', function() {
     .set('X-User', user.j())
     .set(config.headerHash, hash.h())
     .set(config.headerControlNumber, hash.number)
-    .end(function(err, res) {
-      res.status.should.equal(400);
+    .expect(400)
+    .end(function(err) {
       done(err);
     });
   });
@@ -690,8 +689,8 @@ describe('Get events', function(){
     .set('X-User', user2.j())
     .set(config.headerHash, hash2.h())
     .set(config.headerControlNumber, hash2.number)
-    .end(function(err, res) {
-      res.status.should.equal(400);
+    .expect(400)
+    .end(function(err) {
       done(err);
     });
   });
@@ -1016,8 +1015,8 @@ describe('Posting high scores', function() {
       .set('X-User', user.j())
       .set(config.headerHash, hash.h())
       .set(config.headerControlNumber, hash.number)
-      .end(function(err, res) {
-        res.status.should.equal(410);
+      .expect(410)
+      .end(function(err) {
         done(err);
       });
   });
@@ -1034,8 +1033,8 @@ describe('Posting high scores', function() {
       .set('X-User', user.j())
       .set(config.headerHash, hash.h())
       .set(config.headerControlNumber, hash.number)
-      .end(function(err, res) {
-        res.status.should.equal(410);
+      .expect(410)
+      .end(function(err) {
         done(err);
       });
   });
@@ -1051,8 +1050,8 @@ describe('Storing messages', function() {
       .set('X-User', user.j())
       .set(config.headerHash, hash.h())
       .set(config.headerControlNumber, hash.number)
-      .end(function(err, res) {
-        res.statusCode.should.equal(400);
+      .expect(400)
+      .end(function(err) {
         done(err);
       });
   });
@@ -1093,8 +1092,8 @@ describe('Other random functions', function() {
   it('Should return nothing if we try for status and do not know secret', function(done) {
     request(app)
     .get('/current-status')
-    .end(function(err, res) {
-      res.status.should.equal(418);
+    .expect(418)
+    .end(function(err) {
       done(err);
     });
   });
