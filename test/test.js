@@ -636,8 +636,8 @@ describe('Event', function() {
       app.redisOptions.port,
       app.redisOptions.host
     );
-    var EventModel = app.eventModel;
-    var event = new EventModel('root', 'kick', 'sorry', user.name);
+    var Event = app.eventModel;
+    var event = new Event('root', 'kick', 'sorry', user.name);
     event.publish(app, pubclient, 'eirik');
     setTimeout(function() {
       // Meh, random timeout to check if things went well.

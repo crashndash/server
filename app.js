@@ -95,7 +95,7 @@ app.version = 1.6;
 app.numsegments = 107;
 app.userModel = models.user;
 app.eventModel = models.event;
-var EventModel = app.eventModel;
+var Event = app.eventModel;
 var UserModel = app.userModel;
 
 app.redisOptions = {
@@ -125,7 +125,7 @@ pubclient.on('error', function(err) {
 });
 
 var addEvent = function(user, type, room, message, name) {
-  var event = new EventModel(user, type, message, name);
+  var event = new Event(user, type, message, name);
   event.publish(app, pubclient, room);
 };
 

@@ -2,7 +2,7 @@
 
 var helpers = require('../src/helpers');
 
-var event = function(user, type, message, name) {
+var Event = function(user, type, message, name) {
   this.type = type;
   this.message = message;
   this.from = user;
@@ -10,7 +10,7 @@ var event = function(user, type, message, name) {
   this.timestamp = helpers.currentTimestamp();
 };
 
-event.prototype.publish = function(app, client, room) {
+Event.prototype.publish = function(app, client, room) {
   var send = {
     event: this,
     room: room
@@ -18,4 +18,4 @@ event.prototype.publish = function(app, client, room) {
   client.publish(app.namespace + '.events', JSON.stringify(send));
 };
 
-module.exports = event;
+module.exports = Event;
