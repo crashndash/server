@@ -18,7 +18,9 @@ module.exports = function(app, config) {
   var addEvent = require('./addEvent')(app);
 
   app.get('/users', function(req, res) {
-    res.status(200).send(_.size(app.data.users));
+    // Need to make sure it is a string, so we don't accidentally set the
+    // status code.
+    res.status(200).send(_.size(app.data.users) + '');
   });
 
   app.post('/game', userdata, function(req, res) {
