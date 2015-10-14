@@ -5,8 +5,8 @@ var model = function(id, name, timestamp){
   this.name = name;
   /* istanbul ignore next*/
   this.timestamp = timestamp || Date.now();
-  this.room = "";
-  this.mail = "";
+  this.room = '';
+  this.mail = '';
 };
 model.prototype.publish = function(app, client) {
   client.publish(app.namespace + '.newuser', JSON.stringify(this));

@@ -18,7 +18,7 @@ module.exports = function(app, config) {
   var addEvent = require('./addEvent')(app);
 
   app.get('/users', function(req, res) {
-    res.status(200).send(_.size(app.data.users) + "\n");
+    res.status(200).send(_.size(app.data.users));
   });
 
   app.post('/game', userdata, function(req, res) {
@@ -127,10 +127,7 @@ module.exports = function(app, config) {
       // If we have no room suggestions, find an active one.
       for (var game in app.data.games) {
         /* istanbul ignore next */
-        if (_.size(app.data.games[game].users) > 3) {
-          // Too big of a room.
-        }
-        else {
+        if (_.size(app.data.games[game].users) <= 3) {
           /* istanbul ignore else */
           if (!isNaN(parseInt(game, 10))) {
             room = game;
@@ -236,7 +233,7 @@ module.exports = function(app, config) {
             'room': room
           };
           var msg = JSON.stringify(response);
-          res.status(200).send(msg + "\n");
+          res.status(200).send(msg);
           clearTimeout(t);
           return;
         }
@@ -370,7 +367,7 @@ module.exports = function(app, config) {
       }
       res.header('X-opponents', _.size(app.data.users));
       res.header('X-crashes', data);
-      res.status(204).send("");
+      res.status(204).send('');
     });
   });
 
@@ -385,7 +382,7 @@ module.exports = function(app, config) {
         .update(req.body.score + 'burn rubber, burn!').digest('hex');
       if (req.body.check === correctHash) {
         pubclient.publish(app.namespace + '.scores', JSON.stringify(req.body));
-        res.status(200).send("Thanks for the scores");
+        res.status(200).send('Thanks for the scores');
         return;
       }
     }
