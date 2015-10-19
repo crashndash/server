@@ -3,7 +3,6 @@
     "node": true
   },
   "rules": {
-    "quotes": "single",
-    "no-empty": false
+    "quotes": [2, "single"]
   }
 }

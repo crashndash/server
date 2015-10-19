@@ -263,7 +263,7 @@ app.startSlave = function(cb) {
   var httpR = require(app.masterscheme);
   var masterUrl = app.masterscheme + '://' + app.masterhostname + ':' + app.masterport + '/current-status?secret=' + app.secret;
   var r = httpR.get(masterUrl, function(res) {
-    app.log("Got response " + res.statusCode + ' from master server');
+    app.log('Got response ' + res.statusCode + ' from master server');
     res.setEncoding('utf8');
     var buffer = '';
     res.on('data', function (chunk) {
@@ -275,7 +275,7 @@ app.startSlave = function(cb) {
     });
   });
   r.on('error', function(e) {
-    app.log("Got error " + e.message + ' from master server');
+    app.log('Got error ' + e.message + ' from master server');
     cb(e.message);
   });
 };
@@ -285,7 +285,7 @@ app.init = function() {
   setUpRoutes(app, config);
   var start = function() {
     app.listen(app.port);
-    app.log("Server started on port " + app.port, 'debug');
+    app.log('Server started on port ' + app.port, 'debug');
   };
   /* istanbul ignore next */
   if (process.env.NODE_ENV === 'slave') {

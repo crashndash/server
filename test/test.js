@@ -299,7 +299,7 @@ describe('Cron', function() {
     done();
   });
   it('Cron should have deleted an empty room, even if some users has been there through a reconnect', function(done) {
-    var unsubscribed = "testuser_un";
+    var unsubscribed = 'testuser_un';
     app.data.games[testroom] = {};
     app.data.games[testroom].users = {};
     app.data.games[testroom].users[unsubscribed] = {
