@@ -9,6 +9,7 @@
     "eslint": "^1.10.3",
     "express": "^4.12.4",
     "hiredis": "^0.4.1",
+    "istanbul": "^0.4.2",
     "redis": "^2.4.1",
     "seed-random": "^2.2.0",
     "toobusy-js": "^0.4.2",
