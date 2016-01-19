@@ -406,10 +406,10 @@ describe('Game', function() {
     testgame = 'testgame' + helpers.currentTimestamp();
     app.data.games[testgame] = {};
     app.data.games[testgame].users = {};
-    app.data.games[testgame].users.testuser1 = 123123;
-    app.data.games[testgame].users.testuser2 = 123123;
-    app.data.games[testgame].users.testuser3 = 123123;
-    app.data.games[testgame].users.testuser4 = 123123;
+    app.data.games[testgame].users.testuser1 = new Testuser();
+    app.data.games[testgame].users.testuser2 = new Testuser();
+    app.data.games[testgame].users.testuser3 = new Testuser();
+    app.data.games[testgame].users.testuser4 = new Testuser();
     request(app)
       .post('/game?game=' + testgame)
       .set('X-User', user.j())
@@ -427,10 +427,10 @@ describe('Game', function() {
     var hash2 = new Hash(user);
     app.data.games[testgame] = {};
     app.data.games[testgame].users = {};
-    app.data.games[testgame].users.testuser1 = 123123;
-    app.data.games[testgame].users.testuser2 = 123123;
-    app.data.games[testgame].users.testuser3 = 123123;
-    app.data.games[testgame].users[user.id] = 123123;
+    app.data.games[testgame].users.testuser1 = new Testuser();
+    app.data.games[testgame].users.testuser2 = new Testuser();
+    app.data.games[testgame].users.testuser3 = new Testuser();
+    app.data.games[testgame].users[user.id] = new Testuser();
     request(app)
     .post('/game?game=' + testgame)
     .set('X-User', user2.j())
