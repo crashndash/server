@@ -4,9 +4,8 @@
   "description": "Multiplayer server for Crash n Dash",
   "main": "index.js",
   "dependencies": {
-    "body-parser": "^1.12.4",
+    "body-parser": "^1.14.2",
     "bunyan": "^1.5.1",
-    "eslint": "^1.10.3",
     "express": "^4.12.4",
     "hiredis": "^0.4.1",
     "istanbul": "^0.4.2",
@@ -17,7 +16,7 @@
   },
   "devDependencies": {
     "coveralls": "^2.11.2",
-    "eslint": "^1.7.2",
+    "eslint": "^1.10.3",
     "istanbul": "^0.4.0",
     "mocha": "^2.2.5",
     "should": "^8.0.1",
