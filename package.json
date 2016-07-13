@@ -15,7 +15,7 @@
     "underscore": "^1.8.3"
   },
   "devDependencies": {
-    "coveralls": "^2.11.2",
+    "coveralls": "^2.11.10",
     "eslint": "^3.0.0",
     "istanbul": "^0.4.0",
     "mocha": "^2.2.5",
