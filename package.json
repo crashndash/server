@@ -8,7 +8,6 @@
     "bunyan": "^1.8.1",
     "express": "^4.14.0",
     "hiredis": "^0.5.0",
-    "istanbul": "^0.4.2",
     "redis": "^2.6.2",
     "seed-random": "^2.2.0",
     "toobusy-js": "^0.5.1",
