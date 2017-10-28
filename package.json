@@ -8,6 +8,7 @@
     "bunyan": "^1.8.1",
     "express": "^4.14.0",
     "hiredis": "^0.5.0",
+    "kill-switch": "^2.0.0",
     "redis": "^2.6.2",
     "seed-random": "^2.2.0",
     "toobusy-js": "^0.5.1",
@@ -23,6 +24,8 @@
   },
   "scripts": {
     "test": "eslint . && mocha",
+    "deploy": "git pull && npm i && npm run kill",
+    "kill": "kill-switch",
     "start": "node index.js"
   },
   "repository": {

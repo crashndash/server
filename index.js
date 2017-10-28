@@ -9,3 +9,7 @@ app.setConfig(config)
 setInterval(function() {
   cron(app);
 }, app.cronInterval);
+
+// Start kill-switch.
+const ks = require('kill-switch')
+ks.autoStart()
