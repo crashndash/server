@@ -24,6 +24,7 @@
   },
   "scripts": {
     "test": "standard . && mocha --exit",
+    "coverage": "istanbul cover -- _mocha --exit",
     "deploy": "git pull && npm i && npm run kill",
     "kill": "kill-switch",
     "start": "node index.js"
