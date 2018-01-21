@@ -1,4 +1,6 @@
 # server
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/crashndash/server.svg)](https://greenkeeper.io/)
 Multiplayer server for Crash n Dash
 
 [![Build Status](https://travis-ci.org/crashndash/server.svg?branch=master)](https://travis-ci.org/crashndash/server)
