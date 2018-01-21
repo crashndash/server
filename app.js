@@ -280,11 +280,11 @@ app.startSlave = function(cb) {
   });
 };
 
-app.init = function() {
+app.init = function(callback) {
   app.initSubClients();
   setUpRoutes(app, config);
   var start = function() {
-    app.listen(app.port);
+    app.listen(app.port, callback);
     app.log('Server started on port ' + app.port, 'debug');
   };
   /* istanbul ignore next */
