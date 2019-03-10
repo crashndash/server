@@ -20,7 +20,7 @@
     "mocha": "^6.0.0",
     "should": "^13.0.1",
     "standard": "^11.0.0",
-    "supertest": "^3.0.0"
+    "supertest": "^4.0.0"
   },
   "scripts": {
     "test": "standard . && mocha --exit",
