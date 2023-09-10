@@ -14,9 +14,14 @@ jobs:
   run:
     name: Run tests
     runs-on: ubuntu-latest
+    env:
+      REDIS_HOST: redis
     strategy:
       matrix:
         node: [ '14']
+    services:
+      redis:
+        image: redis
     steps:
       - uses: actions/checkout@v2
       - name: Use Node.js
