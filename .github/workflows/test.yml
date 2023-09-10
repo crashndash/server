@@ -14,14 +14,14 @@ jobs:
   run:
     name: Run tests
     runs-on: ubuntu-latest
-    env:
-      REDIS_ENV: redis-server
     strategy:
       matrix:
         node: [ '14']
     services:
       redis-server:
         image: redis
+        ports:
+          - 6379:6379
         options: >-
           --health-cmd "redis-cli ping"
           --health-interval 10s
