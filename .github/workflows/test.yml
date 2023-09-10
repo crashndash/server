@@ -15,12 +15,12 @@ jobs:
     name: Run tests
     runs-on: ubuntu-latest
     env:
-      REDIS_ENV: redis
+      REDIS_ENV: redis-server
     strategy:
       matrix:
         node: [ '14']
     services:
-      redis:
+      redis-server:
         image: redis
     steps:
       - uses: actions/checkout@v2
