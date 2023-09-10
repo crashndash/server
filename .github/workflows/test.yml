@@ -19,7 +19,7 @@ jobs:
         node: [ '14']
     services:
       redis-server:
-        image: redis
+        image: redis:7.2.1-alpine3.18
         ports:
           - 6379:6379
         options: >-
