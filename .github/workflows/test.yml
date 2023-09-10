@@ -15,7 +15,7 @@ jobs:
     name: Run tests
     runs-on: ubuntu-latest
     env:
-      REDIS_HOST: redis
+      REDIS_ENV: redis
     strategy:
       matrix:
         node: [ '14']
