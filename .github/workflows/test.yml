@@ -31,12 +31,6 @@ jobs:
       - run: npm install
       - run: cp default.config.json config.json
       - run: npm test
-        env:
-          CI_ACCESS_KEY_ID: ${{ secrets.CI_ACCESS_KEY_ID }}
-          CI_SECRET_KEY: ${{ secrets.CI_SECRET_KEY }}
-          CI_AWS_REGION: ${{ secrets.CI_AWS_REGION }}
-      - run: /bin/sh ./clean-repo.sh
-        if: matrix.node == 14
       - run: npm run coverage
         if: matrix.node == 14
       - name: Coveralls
