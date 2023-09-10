@@ -19,7 +19,6 @@ jobs:
         node: 
           - "14"
           - "16"
-          - "18"
     services:
       redis-server:
         image: redis:7.2.1-alpine3.18
